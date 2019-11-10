@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\amigao_esolucoes.png" />
+    <None Include="wwwroot\img\amigao_thumb.png" />
+    <None Include="wwwroot\img\ativitta_esolucoes.jpg" />
+    <None Include="wwwroot\img\ativitta_thumb.png" />
+    <None Include="wwwroot\img\btnTwitter.png" />
+    <None Include="wwwroot\img\bus1.jpg" />
+    <None Include="wwwroot\img\bus2.jpg" />
+    <None Include="wwwroot\img\bus_icon_transparente.png" />
+    <None Include="wwwroot\img\bus_stop_icon.png" />
+    <None Include="wwwroot\img\Casemiro.jpg" />
+    <None Include="wwwroot\img\Coala.png" />
+    <None Include="wwwroot\img\coala_esolucoes.png" />
+    <None Include="wwwroot\img\Comprovante_Renda.jpg" />
+    <None Include="wwwroot\img\Comprovante_Res.jpg" />
+    <None Include="wwwroot\img\emtu.gif" />
+    <None Include="wwwroot\img\emtu_white.gif" />
+    <None Include="wwwroot\img\favicon.png" />
+    <None Include="wwwroot\img\favicon\android-icon-144x144.png" />
+    <None Include="wwwroot\img\favicon\android-icon-192x192.png" />
+    <None Include="wwwroot\img\favicon\android-icon-36x36.png" />
+    <None Include="wwwroot\img\favicon\android-icon-48x48.png" />
+    <None Include="wwwroot\img\favicon\android-icon-72x72.png" />
+    <None Include="wwwroot\img\favicon\android-icon-96x96.png" />
+    <None Include="wwwroot\img\favicon\apple-icon-114x114.png" />
+    <None Include="wwwroot\img\favicon\apple-icon-120x120.png" />
+    <None Include="wwwroot\img\favicon\apple-icon-144x144.png" />
+    <None Include="wwwroot\img\favicon\apple-icon-152x152.png" />
+    <None Include="wwwroot\img\favicon\apple-icon-180x180.png" />
+    <None Include="wwwroot\img\favicon\apple-icon-57x57.png" />
+    <None Include="wwwroot\img\favicon\apple-icon-60x60.png" />
+    <None Include="wwwroot\img\favicon\apple-icon-72x72.png" />
+    <None Include="wwwroot\img\favicon\apple-icon-76x76.png" />
+    <None Include="wwwroot\img\favicon\apple-icon-precomposed.png" />
+    <None Include="wwwroot\img\favicon\apple-icon.png" />
+    <None Include="wwwroot\img\favicon\browserconfig.xml" />
+    <None Include="wwwroot\img\favicon\favicon-16x16.png" />
+    <None Include="wwwroot\img\favicon\favicon-32x32.png" />
+    <None Include="wwwroot\img\favicon\favicon-96x96.png" />
+    <None Include="wwwroot\img\favicon\favicon.ico" />
+    <None Include="wwwroot\img\favicon\ms-icon-144x144.png" />
+    <None Include="wwwroot\img\favicon\ms-icon-150x150.png" />
+    <None Include="wwwroot\img\favicon\ms-icon-310x310.png" />
+    <None Include="wwwroot\img\favicon\ms-icon-70x70.png" />
+    <None Include="wwwroot\img\friikjones.jpg" />
+    <None Include="wwwroot\img\kernel_esolucoes.png" />
+    <None Include="wwwroot\img\logo.png" />
+    <None Include="wwwroot\img\logoELab.png" />
+    <None Include="wwwroot\img\logotipo_alliance.jpg" />
+    <None Include="wwwroot\img\logo_milenio.jpeg" />
+    <None Include="wwwroot\img\logo_milenio.png" />
+    <None Include="wwwroot\img\onibus_icon.png" />
+    <None Include="wwwroot\img\qrcode.jpeg" />
+    <None Include="wwwroot\img\RG.jpg" />
+    <None Include="wwwroot\img\seicad_esolucoes.png" />
+    <None Include="wwwroot\img\sharkbuy_esolucoes.png" />
+    <None Include="wwwroot\img\star.gif" />
+    <None Include="wwwroot\img\star_n.gif" />
+    <None Include="wwwroot\img\Top_Down_Logo.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>

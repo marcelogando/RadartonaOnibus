@@ -1,0 +1,226 @@
+﻿@using Newtonsoft.Json;
+@model List<Onibus>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #map {
+            height: 800px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="Profile-mid" style="margin-top:-5px !important;text-align:center;">
+        <img src="~/img/logo_milenio.png" style="height:105px;" />
+    </div>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+
+            var centro = { lat: -23.602391606938735, lng: -46.675853200000006 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: centro
+            });
+
+                //var bus = { lat: -23.602, lng: -46.6742 };
+                //var iconBus = {
+                //    url: "./img/bus_icon_transparente.png",
+                //    scaledSize: new google.maps.Size(40, 40)
+                //}
+
+                //var onibus = new google.maps.Marker({
+                //    position: bus,
+                //    map: map,
+                //    icon: iconBus
+                //});
+
+
+
+
+
+            @foreach (Onibus onibus in Model) {
+                @: bus = { lat: @onibus.py.ToString().Replace(",","." ), lng: @onibus.px.ToString().Replace(",",".")} ;
+
+                if (onibus.ocorrencia)
+                {
+                     @:iconBus = {
+                     @:   url: "./img/bus_icon_vermelho.png",
+                     @:   scaledSize: new google.maps.Size(40, 40)
+                    @:}
+                }
+                else
+                {
+                     @:iconBus = {
+                     @:   url: "./img/bus_icon_transparente.png",
+                     @:   scaledSize: new google.maps.Size(40, 40)
+                    @:}
+                }
+
+                @:var @onibus.nome = new google.maps.Marker({
+                   @: position: bus,
+                    @: map: map,
+                    @: icon: iconBus
+                @:});
+            }
+
+
+            //var bus = { lat: -23.602, lng: -46.6742 };
+            //var destino = { lat: -23.59, lng: -46.55 };
+            //caminhoOnibus(bus, destino, map);
+
+
+            //bus = { lat: -23.5, lng: -46.67 };
+            //destino = { lat: -23.7, lng: -46.7 };
+            //caminhoOnibus(bus, destino, map);
+
+
+            //bus = { lat: -23.5, lng: -46.6 };
+            //destino = { lat: -23.5, lng: -46.5 };
+            //caminhoOnibus(bus, destino, map);
+
+            //bus = { lat: -23.5, lng: -46.65 };
+            //destino = { lat: -23.6, lng: -46.4 };
+            //caminhoOnibus(bus, destino, map);
+
+
+            // var data = @Html.Raw(JsonConvert.SerializeObject(this.Model));
+
+            //for (i in data) {
+            //    //if (Math.abs(data[i].py) >= 23.60 && Math.abs(data[i].py) <= 23.61 &&
+            //    //    Math.abs(data[i].px) >= 46.67 && Math.abs(data[i].px) <= 46.68) {
+            //        //console.log('opa');
+            //        var onibus_destino = { lat: data[i].py, lng: data[i].px };
+
+            //        // Dar autorização na key
+
+            //        // Set destination, origin and travel mode.
+            //        var request = {
+            //            destination: onibus_destino,
+            //            origin: centro,
+            //            travelMode: 'DRIVING'
+            //        };
+
+            //        var bus = { lat: data[i].py, lng: data[i].px };
+            //        var destino = { lat: data[i].py + 0.1, lng: data[i].px + 0.1 };
+            //        caminhoOnibus(bus, destino, map);
+
+            //    }
+            //}
+        }
+
+
+        //function caminhoOnibus(bus, destino, map) {
+        //    var directionsServiceBlue = new google.maps.DirectionsService();
+        //    var directionsServiceRed = new google.maps.DirectionsService();
+
+        //    var directionsDisplayBlue = new google.maps.DirectionsRenderer({
+        //        suppressMarkers: true,
+        //        polylineOptions: {
+        //            strokeColor: "blue"
+        //        }
+        //    });
+
+        //    var directionsDisplayRed = new google.maps.DirectionsRenderer({
+        //        suppressMarkers: true,
+        //        polylineOptions: {
+        //            strokeColor: "red"
+        //        }
+        //    });
+
+            //var centro = { lat: -23.602391606938735, lng: -46.675853200000006 };
+
+            //directionsDisplayBlue.setMap(map);
+            //directionsDisplayRed.setMap(map);
+
+            //var success = false;
+            //var tentativas = 2;
+
+            //while (!success && tentativas > 0) {
+            //    directionsServiceBlue.route({
+            //        origin: bus,
+            //        destination: destino,
+            //        travelMode: 'WALKING'
+            //    }, function (response, status) {
+            //        if (status === 'OK') {
+            //            var iconBus = {
+            //                url: "./img/bus_icon_transparente.png",
+            //                scaledSize: new google.maps.Size(40, 40)
+            //            }
+
+            //            var onibus = new google.maps.Marker({
+            //                position: bus,
+            //                map: map,
+            //                icon: iconBus
+            //            });
+
+            //            var iconBusStop = {
+            //                url: "./img/bus_stop_icon.png",
+            //                scaledSize: new google.maps.Size(40, 40)
+            //            }
+
+            //            var parada = new google.maps.Marker({
+            //                position: destino,
+            //                map: map,
+            //                icon: iconBusStop
+            //            });
+            //            directionsDisplayBlue.setDirections(response);
+            //            //success = true;
+            //        } else if (status === 'OVER_QUERY_LIMIT') {
+            //            //sleep(200);
+            //            //tentativas--;
+            //            //window.alert('Directions request failed due to ' + status);
+            //        }
+            //    });
+            ////}
+
+            ////success = false;
+            ////tentativas = 2;
+
+            ////while (!success && tentativas > 0) {
+            //    //success = false;
+            //    directionsServiceRed.route({
+            //        origin: bus,
+            //        destination: destino,
+            //        travelMode: 'DRIVING'
+            //    }, function (response, status) {
+            //        if (status === 'OK') {
+            //            var iconBus = {
+            //                url: "./img/bus_icon_transparente.png",
+            //                scaledSize: new google.maps.Size(40, 40)
+            //            }
+
+            //            var onibus = new google.maps.Marker({
+            //                position: bus,
+            //                map: map,
+            //                icon: iconBus
+            //            });
+
+            //            var iconBusStop = {
+            //                url: "./img/bus_stop_icon.png",
+            //                scaledSize: new google.maps.Size(40, 40)
+            //            }
+
+            //            var parada = new google.maps.Marker({
+            //                position: destino,
+            //                map: map,
+            //                icon: iconBusStop
+            //            });
+            //            directionsDisplayRed.setDirections(response);
+            //            //success = true;
+            //        } else if (status === 'OVER_QUERY_LIMIT') {
+            //            //sleep(200);
+            //            //tentativas--;
+            //            //window.alert('Directions request failed due to ' + status);
+            //        }
+            //    });
+            //}
+        //}
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaNhuC6LqbfzgmuR8IjwWWUo6OHnhN8aM&callback=initMap">
+    </script>
+</body>
+</html>
