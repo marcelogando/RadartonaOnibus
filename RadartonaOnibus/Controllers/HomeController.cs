@@ -58,9 +58,6 @@ namespace RadartonaOnibus.Controllers
             {
                 foreach (Onibus on in linha.vs)
                 {
-                    Alerta teste = lstAlerta.Where(d => Math.Abs(d.lat - on.py) <= tolerancia && Math.Abs(d.lon - on.px) <= tolerancia).FirstOrDefault();
-                    Alerta teste2 = lstAlerta.Where(d => Math.Abs(d.lat - on.py) <= tolerancia && Math.Abs(d.lon - on.px) <= tolerancia).LastOrDefault();
-
                     if (lstAlerta.Where(d => Math.Abs(d.lat - on.py) <= tolerancia && Math.Abs(d.lon - on.px) <= tolerancia).Count() > 0)
                     {
                         on.ocorrencia = true;
